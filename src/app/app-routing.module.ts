@@ -4,6 +4,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
+import { PrivadoPageComponent } from './components/privado-page/privado-page.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path:"login",component:LoginPageComponent},
   {path:"singup",component:RegisterPageComponent},
   {path:"home",component:HomePageComponent},
+  {path:"privado",component:PrivadoPageComponent},
   {path:"**",component:NotFoundPageComponent}
 
 ];
