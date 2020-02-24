@@ -13,8 +13,8 @@
    
     
 
-    <div class="mx-auto">
-        <ul class="navbar-nav mr-auto">
+    <div class="ml-auto">
+        <ul class="navbar-nav mx-auto">
           <li class="nav-item" *ngIf="isLogin">
             <a class="nav-link" (click)="logoutUser()" routerLink="">Log out<span class="sr-only" >(current)</span></a>
           </li>
@@ -23,6 +23,12 @@
             </li>
             <li class="nav-item" *ngIf="!isLogin">
               <a class="nav-link" routerLink="/singup" >Sing up</a>
+            </li>
+            <li class="nav-item" *ngIf="isLogin">
+              <a class="nav-link" >{{nameUser}}</a>
+            </li>
+            <li class="nav-item" *ngIf="isLogin">
+              <a class="nav-link" routerLink="/privado" ><img width="30" height="30" class="img-fluid rounded-circle" src="{{fotoUser}}" alt=""></a>
             </li>
           </ul>
     </div>

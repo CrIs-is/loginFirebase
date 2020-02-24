@@ -33,4 +33,12 @@ export class LoginPageComponent implements OnInit {
     })
   }
 
+  loginGoogle(){
+    this.servicio.loginWithGoogle()
+    .then((res) => {
+      this.ruta.navigate(['/privado']);
+    }).catch(err => console.log(err));
+    
+  }
+
 }
