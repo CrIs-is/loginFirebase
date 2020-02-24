@@ -4,18 +4,18 @@
         <div class="card">
             <div class="card-body ">
                 <h2 class="text-center">Log in</h2>
-                <form >
+                <form (submit)="loguearUser()">
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="password" name="password">
+                        <input type="email" class="form-control" [(ngModel)]="email" id="email" name="email">
                     </div>
 
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password">
+                        <input type="password" class="form-control" [(ngModel)]="password" id="password" name="password">
                     </div>
 
-                    <button class="btn btn-primary btn-block btn-lg">Enviar</button>
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">Enviar</button>
                 </form>
             </div>
         </div>
