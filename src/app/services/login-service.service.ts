@@ -44,4 +44,8 @@ export class LoginServiceService {
   loginWithGoogle(){
     return this.authService.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
+
+  loginWithFacebook(){
+    return this.authService.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
+  }
 }
