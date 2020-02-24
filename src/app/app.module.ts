@@ -18,6 +18,8 @@ import { environment }from '../environments/environment';
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthGuard } from '../app/guards/auth.guard';
+import {FlashMessagesModule } from 'angular2-flash-messages'
+import {FlashMessagesService }from 'angular2-flash-messages';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,8 +36,9 @@ import { AuthGuard } from '../app/guards/auth.guard';
     AppRoutingModule,
     FormsModule,
     AngularFireAuthModule,
+    FlashMessagesModule
   ],
-  providers: [LoginServiceService,AuthGuard],
+  providers: [LoginServiceService,AuthGuard,FlashMessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

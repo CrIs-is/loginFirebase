@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginServiceService }from '../../services/login-service.service'
 import {Router} from '@angular/router';
+import{ FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-login-page',
@@ -13,7 +14,9 @@ export class LoginPageComponent implements OnInit {
   public  password:string;
 
   constructor(private servicio: LoginServiceService,
-    private ruta: Router) { }
+    private ruta: Router,
+    private flash: FlashMessagesService
+    ) { }
 
   ngOnInit() {
 
@@ -22,8 +25,10 @@ export class LoginPageComponent implements OnInit {
   loguearUser(){
     this.servicio.logIn(this.email,this.password)
     .then((res) => {
+      this.flash.show('Ingreso exitoso',{cssClass:'alert-success',timeout:4000});
       this.ruta.navigate(['/privado']);
     }).catch((err)=>{
+      this.flash.show(err.message,{cssClass:'alert-danger',timeout:4000});
       console.log(err);
     })
   }
